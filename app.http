@@ -1,9 +1,11 @@
 GET http://localhost:3000/todos/?status=TO%20DO
 ###
+GET http://localhost:3000/todos/?status=TO%20po
+###
 
 GET http://localhost:3000/todos/?priority=HIGH
 ###
-GET http://localhost:3000/todos/?Priority="AVERAGE"
+GET http://localhost:3000/todos/?priority="AVERAGE"
 ###
 
 GET http://locathost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
@@ -17,6 +19,8 @@ GET http://localhost:3000/todos/?category=WORK&status=DONE
 
 GET http://localhost:3000/todos/?category=HOME
 ###
+GET http://localhost:3000/todos/?category=OFFICE
+###
 
 GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
 ###
@@ -24,6 +28,8 @@ GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
 GET http://localhost:3000/todos/2/
 ###
 GET http://localhost:3000/agenda/?date=2021-04-02
+###
+GET http://localhost:3000/agenda/?date=2021-04/08
 ###
 POST http://localhost:3000/todos/
 Content-Type: application/json
@@ -63,7 +69,21 @@ PUT http://localhost:3000/todos/2/
 Content-Type: application/json
 
 {
+    "dueDate": "2021-01/12"
+}
+###
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{
     "priority": "HIGH"
+}
+###
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{
+    "priority": "NORMAL"
 }
 ###
 PUT http://localhost:3000/todos/2/
@@ -77,11 +97,26 @@ Content-Type: application/json
 PUT http://localhost:3000/todos/2/
 Content-Type: application/json
 
+ {
+    "todo": "Clean the Home"
+}
+###
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
 {
     "category": "LEARNING"
 }
 ###
 
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{
+    "category": "STUDY"
+}
+
+###
 DELETE http://localhost:3000/todos/1/
 
 
